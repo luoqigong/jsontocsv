@@ -1,5 +1,0 @@
-name = "json-to-table"
-compatibility_date = "2026-05-01"
-
-# Cloudflare Pages 配置 - 静态站点部署
-# 使用 wrangler pages deploy dist 命令部署
