@@ -13,7 +13,7 @@ export interface ColumnMeta {
 }
 
 export interface FlatRow {
-  [key: string]: unknown
+  [key: string]: JsonValue | undefined
 }
 
 export interface PathCandidate {

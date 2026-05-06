@@ -15,7 +15,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["vitest/globals", "node"]
+    "types": ["vitest/globals", "node", "vue"]
   },
   "include": ["src/**/*.ts", "src/**/*.vue"]
 }

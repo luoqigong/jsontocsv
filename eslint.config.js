@@ -1,6 +1,7 @@
 import js from '@eslint/js'
 import pluginVue from 'eslint-plugin-vue'
 import vueTs from '@vue/eslint-config-typescript'
+import prettier from 'eslint-config-prettier'
 
 export default [
   js.configs.recommended,
@@ -29,4 +30,5 @@ export default [
       'vue/attributes-order': 'off',
     },
   },
+  prettier,
 ]
