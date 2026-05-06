@@ -23,3 +23,4 @@ export function useDarkMode() {
   watch(isDark, apply)
 
   return { isDark, toggle }
+}
