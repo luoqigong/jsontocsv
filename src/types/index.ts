@@ -42,6 +42,12 @@ export interface ExcelStyleOptions {
   autoColumnWidth: boolean
 }
 
+export interface FilterCondition {
+  column: string
+  operator: '>' | '<' | '=' | '!=' | '>=' | '<=' | 'contains' | 'starts with' | 'regex'
+  value: string
+}
+
 export interface Template {
   id: string
   name: string
