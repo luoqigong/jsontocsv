@@ -10,7 +10,7 @@
     "test:run": "vitest run",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "deploy": "npm run build && wrangler pages deploy dist"
+    "deploy": "npm run build && wrangler pages deploy dist --branch=master"
   },
   "dependencies": {
     "@tanstack/vue-table": "^8.21.0",
@@ -35,6 +35,7 @@
     "unocss": "^0.65.0",
     "vite": "^6.0.0",
     "vitest": "^2.1.0",
-    "vue-tsc": "^2.2.0"
+    "vue-tsc": "^2.2.0",
+    "wrangler": "^4.88.0"
   }
 }
