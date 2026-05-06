@@ -74,6 +74,7 @@ describe('data store', () => {
     store.setInput(JSON.stringify([
       { id: 1, nested: { foo: 'bar' } },
       { id: 2, nested: { foo: 'baz' } },
+      { id: 3, nested: { foo: 'qux' } },
     ]))
     expect(store.nestingStrategy).toBe('flatten')
     expect(store.flatRows[0]).toHaveProperty('nested.foo')

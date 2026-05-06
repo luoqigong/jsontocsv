@@ -10,6 +10,7 @@ export interface ColumnMeta {
   type: 'text' | 'integer' | 'decimal' | 'date' | 'boolean'
   hidden: boolean
   format?: string
+  order?: number
 }
 
 export interface FlatRow {
