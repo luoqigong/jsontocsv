@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { flattenRows } from '../flattener'
-import type { JsonObject, NestingStrategy } from '@/types'
+import type { JsonObject } from '@/types'
 
 describe('flattenRows', () => {
   it('flattens nested objects with dot notation', () => {

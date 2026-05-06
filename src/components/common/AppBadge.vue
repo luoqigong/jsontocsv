@@ -3,7 +3,7 @@ interface Props {
   variant?: 'default' | 'success' | 'warning' | 'error'
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   variant: 'default',
 })
 

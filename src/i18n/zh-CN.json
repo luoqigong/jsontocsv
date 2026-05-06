@@ -1,1 +1,65 @@
-{}
+{
+  "app": {
+    "title": "JSON to Table",
+    "privacyBadge": "您的数据 100% 在浏览器中处理，不会上传到任何服务器。",
+    "learnMore": "了解更多"
+  },
+  "input": {
+    "paste": "粘贴",
+    "file": "上传文件",
+    "placeholder": "在此粘贴 JSON...",
+    "dragDrop": "拖拽文件到此处或点击上传",
+    "maxSize": "最大 50MB",
+    "samples": {
+      "flat": "扁平数组",
+      "nested": "嵌套对象",
+      "api": "API 包裹",
+      "jsonl": "JSON Lines"
+    }
+  },
+  "path": {
+    "dataArray": "数据数组路径"
+  },
+  "nesting": {
+    "title": "嵌套处理策略",
+    "flatten": "扁平化",
+    "stringify": "字符串化",
+    "explode": "爆炸展开",
+    "multiSheet": "多 Sheet"
+  },
+  "columns": {
+    "title": "列管理",
+    "reset": "重置"
+  },
+  "filter": {
+    "search": "搜索所有列...",
+    "clear": "清除",
+    "addCondition": "添加条件"
+  },
+  "export": {
+    "csv": "导出 CSV",
+    "excel": "导出 Excel",
+    "options": "导出选项",
+    "delimiter": "分隔符",
+    "bom": "UTF-8 BOM",
+    "header": "包含表头",
+    "filteredOnly": "仅过滤后的行"
+  },
+  "table": {
+    "rows": "行",
+    "noData": "无数据"
+  },
+  "about": {
+    "title": "关于 JSON to Table",
+    "privacy": {
+      "title": "隐私保护",
+      "body": "所有 JSON 解析、转换、导出都在您的浏览器中完成。我们永远不会看到您的数据。"
+    },
+    "limits": {
+      "title": "使用限制",
+      "size": "文件大小限制：50MB（浏览器内存限制）",
+      "browser": "建议使用 Chrome / Edge / Firefox 最新版本"
+    },
+    "back": "返回工具"
+  }
+}

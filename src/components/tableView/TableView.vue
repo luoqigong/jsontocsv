@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import { computed, h } from 'vue'
+import { computed } from 'vue'
 import {
   useVueTable,
   getCoreRowModel,
   getSortedRowModel,
   type ColumnDef,
-  type SortingState,
 } from '@tanstack/vue-table'
 import { useFiltersStore } from '@/stores/filters'
 import { useColumnsStore } from '@/stores/columns'

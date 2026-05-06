@@ -1,1 +1,65 @@
-{}
+{
+  "app": {
+    "title": "JSON to Table",
+    "privacyBadge": "Your data is processed 100% in the browser and never uploaded to any server.",
+    "learnMore": "Learn more"
+  },
+  "input": {
+    "paste": "Paste",
+    "file": "Upload File",
+    "placeholder": "Paste JSON here...",
+    "dragDrop": "Drag and drop files here or click to upload",
+    "maxSize": "Max 50MB",
+    "samples": {
+      "flat": "Flat Array",
+      "nested": "Nested Objects",
+      "api": "API Wrapped",
+      "jsonl": "JSON Lines"
+    }
+  },
+  "path": {
+    "dataArray": "Data Array Path"
+  },
+  "nesting": {
+    "title": "Nesting Strategy",
+    "flatten": "Flatten",
+    "stringify": "Stringify",
+    "explode": "Explode",
+    "multiSheet": "Multi Sheet"
+  },
+  "columns": {
+    "title": "Column Management",
+    "reset": "Reset"
+  },
+  "filter": {
+    "search": "Search all columns...",
+    "clear": "Clear",
+    "addCondition": "Add Condition"
+  },
+  "export": {
+    "csv": "Export CSV",
+    "excel": "Export Excel",
+    "options": "Export Options",
+    "delimiter": "Delimiter",
+    "bom": "UTF-8 BOM",
+    "header": "Include Header",
+    "filteredOnly": "Filtered Rows Only"
+  },
+  "table": {
+    "rows": "rows",
+    "noData": "No data"
+  },
+  "about": {
+    "title": "About JSON to Table",
+    "privacy": {
+      "title": "Privacy Protection",
+      "body": "All JSON parsing, transformation, and export happens in your browser. We will never see your data."
+    },
+    "limits": {
+      "title": "Usage Limits",
+      "size": "File size limit: 50MB (browser memory limit)",
+      "browser": "Recommended: latest Chrome / Edge / Firefox"
+    },
+    "back": "Back to Tool"
+  }
+}
