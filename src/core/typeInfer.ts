@@ -15,7 +15,7 @@ export function inferColumnTypes(rows: FlatRow[]): ColumnMeta[] {
   const result: ColumnMeta[] = []
 
   for (const key of keys) {
-    const values: JsonValue[] = []
+    const values: (JsonValue | undefined)[] = []
     for (const row of rows) {
       if (key in row) {
         values.push(row[key])
@@ -34,7 +34,7 @@ export function inferColumnTypes(rows: FlatRow[]): ColumnMeta[] {
   return result
 }
 
-function inferType(values: JsonValue[]): ColumnMeta['type'] {
+function inferType(values: (JsonValue | undefined)[]): ColumnMeta['type'] {
   if (values.length === 0) return 'text'
 
   // Filter out undefined

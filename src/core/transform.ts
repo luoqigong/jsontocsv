@@ -1,10 +1,10 @@
-import type { FlatRow, ColumnMeta } from '@/types'
+import type { FlatRow, ColumnMeta, JsonValue } from '@/types'
 
 export function formatValue(
   value: unknown,
   type: ColumnMeta['type'],
   format?: string,
-): unknown {
+): JsonValue | undefined {
   if (value === null || value === undefined) {
     return ''
   }
@@ -34,12 +34,12 @@ export function formatValue(
     }
     case 'integer': {
       const n = Number(value)
-      return Number.isNaN(n) ? value : Math.floor(n)
+      return Number.isNaN(n) ? String(value) : Math.floor(n)
     }
     case 'decimal': {
       const n = Number(value)
       if (Number.isNaN(n)) {
-        return value
+        return String(value)
       }
       if (format) {
         const match = format.match(/^\.(\d+)$/)

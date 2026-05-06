@@ -17,7 +17,14 @@
       "Bash(git -C \"d:/小项目/manytools/json转表格\" log --oneline -10)",
       "Bash(node -e ' *)",
       "Bash(node --input-type=module -e ' *)",
-      "Bash(cd \"D:\\\\小项目\\\\manytools\\\\json转表格\" && rm src/stores/__tests__/debug*.test.ts)"
+      "Bash(cd \"D:\\\\小项目\\\\manytools\\\\json转表格\" && rm src/stores/__tests__/debug*.test.ts)",
+      "Bash(git -C \"D:/小项目/manytools/json转表格\" status)",
+      "Bash(git -C \"D:/小项目/manytools/json转表格\" add src/components/common/)",
+      "Bash(git -C D:/小项目/manytools/json转表格 commit -m ' *)",
+      "Bash(git -C \"D:/小项目/manytools/json转表格\" add src/components/input/)",
+      "Bash(git -C \"D:/小项目/manytools/json转表格\" add src/components/PathSelector.vue)",
+      "Bash(git -C \"D:/小项目/manytools/json转表格\" add src/components/NestingPanel.vue)",
+      "Bash(git -C \"D:/小项目/manytools/json转表格\" log --oneline -5)"
     ],
     "additionalDirectories": [
       "D:\\小项目\\manytools\\json转表格\\src\\stores\\__tests__"

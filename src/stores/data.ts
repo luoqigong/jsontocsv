@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { ref, computed, shallowRef } from 'vue'
 import { defineStore } from 'pinia'
 import type { JsonValue, PathCandidate, NestingStrategy, FlatRow, ColumnMeta } from '@/types'
 import { parseJson } from '@/core/parser'
@@ -9,7 +9,7 @@ import { inferColumnTypes } from '@/core/typeInfer'
 export const useDataStore = defineStore('data', () => {
   // State
   const rawInput = ref('')
-  const parsedValue = ref<JsonValue | null>(null)
+  const parsedValue = shallowRef<JsonValue | null>(null)
   const parseError = ref<string | undefined>(undefined)
   const isJsonl = ref(false)
   const pathCandidates = ref<PathCandidate[]>([])
