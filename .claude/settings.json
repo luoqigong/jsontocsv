@@ -24,7 +24,8 @@
       "Bash(git -C \"D:/小项目/manytools/json转表格\" add src/components/input/)",
       "Bash(git -C \"D:/小项目/manytools/json转表格\" add src/components/PathSelector.vue)",
       "Bash(git -C \"D:/小项目/manytools/json转表格\" add src/components/NestingPanel.vue)",
-      "Bash(git -C \"D:/小项目/manytools/json转表格\" log --oneline -5)"
+      "Bash(git -C \"D:/小项目/manytools/json转表格\" log --oneline -5)",
+      "Bash(npx wrangler *)"
     ],
     "additionalDirectories": [
       "D:\\小项目\\manytools\\json转表格\\src\\stores\\__tests__"

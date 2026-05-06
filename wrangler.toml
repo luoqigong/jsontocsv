@@ -1,0 +1,5 @@
+name = "json-to-table"
+compatibility_date = "2026-05-01"
+
+[site]
+bucket = "./dist"
