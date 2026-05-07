@@ -1,5 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void
+  }
+}
+
 const Home = () => import('./pages/Home.vue')
 const About = () => import('./pages/About.vue')
 const Contact = () => import('./pages/Contact.vue')
@@ -22,4 +28,13 @@ export const router = createRouter({
   scrollBehavior() {
     return { top: 0 }
   },
+})
+
+router.afterEach((to) => {
+  if (typeof window.gtag === 'function') {
+    window.gtag('config', 'G-42LXEJW456', {
+      page_path: to.fullPath,
+      page_location: window.location.origin + to.fullPath,
+    })
+  }
 })
