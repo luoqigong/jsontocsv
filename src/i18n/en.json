@@ -75,7 +75,7 @@
     "delimiterComma": ", (comma)",
     "delimiterSemicolon": "; (semicolon)",
     "delimiterTab": "\\t (tab)",
-    "delimiterPipe": "| (pipe)"
+    "delimiterPipe": "Pipe"
   },
   "table": {
     "rows": "rows",

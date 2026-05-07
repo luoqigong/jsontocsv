@@ -75,7 +75,7 @@
     "delimiterComma": ", (逗号)",
     "delimiterSemicolon": "; (分号)",
     "delimiterTab": "\\t (制表符)",
-    "delimiterPipe": "| (竖线)"
+    "delimiterPipe": "竖线"
   },
   "table": {
     "rows": "行",
