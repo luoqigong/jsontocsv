@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 const CONSENT_KEY = 'j2t-cookie-consent'
 const visible = ref(false)
 
@@ -38,13 +40,12 @@ function dismiss() {
       <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
         <div class="flex-1 text-sm text-gray-600 dark:text-gray-300">
           <p>
-            We use minimal local storage for essential preferences only (language, dark mode).
-            We do not use tracking cookies or analytics.
+            {{ t('app.cookieBanner') }}
             <RouterLink
               to="/cookies"
               class="text-primary-600 dark:text-primary-400 hover:underline font-medium"
             >
-              Learn more
+              {{ t('app.learnMore') }}
             </RouterLink>
           </p>
         </div>
@@ -53,13 +54,13 @@ function dismiss() {
             class="px-4 py-2 rounded-lg text-sm font-medium bg-primary-600 text-white hover:bg-primary-700 transition-colors"
             @click="accept"
           >
-            Accept
+            {{ t('app.accept') }}
           </button>
           <button
             class="px-4 py-2 rounded-lg text-sm font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
             @click="dismiss"
           >
-            Dismiss
+            {{ t('app.dismiss') }}
           </button>
         </div>
       </div>

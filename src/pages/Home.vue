@@ -149,7 +149,7 @@ useSchema({
                   {{ t('home.dataInputDesc') }}
                 </p>
               </div>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-gray-800 dark:text-gray-300">
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium whitespace-nowrap text-slate-600 dark:bg-gray-800 dark:text-gray-300">
                 {{ t('home.step', { n: 1 }) }}
               </span>
             </div>
@@ -166,7 +166,7 @@ useSchema({
                   {{ t('home.structureSetupDesc') }}
                 </p>
               </div>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-gray-800 dark:text-gray-300">
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium whitespace-nowrap text-slate-600 dark:bg-gray-800 dark:text-gray-300">
                 {{ t('home.step', { n: 2 }) }}
               </span>
             </div>
@@ -188,7 +188,7 @@ useSchema({
                   {{ t('home.previewFiltersDesc') }}
                 </p>
               </div>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-gray-800 dark:text-gray-300">
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium whitespace-nowrap text-slate-600 dark:bg-gray-800 dark:text-gray-300">
                 {{ t('home.step', { n: 3 }) }}
               </span>
             </div>
@@ -212,7 +212,7 @@ useSchema({
                 {{ t('home.columnManagerDesc') }}
               </p>
             </div>
-            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-gray-800 dark:text-gray-300">
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium whitespace-nowrap text-slate-600 dark:bg-gray-800 dark:text-gray-300">
               {{ t('home.step', { n: 4 }) }}
             </span>
           </div>
@@ -229,7 +229,7 @@ useSchema({
                 {{ t('home.exportStudioDesc') }}
               </p>
             </div>
-            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-gray-800 dark:text-gray-300">
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium whitespace-nowrap text-slate-600 dark:bg-gray-800 dark:text-gray-300">
               {{ t('home.step', { n: 5 }) }}
             </span>
           </div>

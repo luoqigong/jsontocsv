@@ -4,6 +4,9 @@
     "privacyBadge": "Your data is processed 100% in the browser and never uploaded to any server.",
     "learnMore": "Learn more",
     "tagline": "Browser-first JSON workspace for clean table exports",
+    "cookieBanner": "We use minimal local storage for essential preferences only (language, dark mode). We do not use tracking cookies or analytics.",
+    "accept": "Accept",
+    "dismiss": "Dismiss",
     "footerDesc": "Free JSON to Excel & CSV converter with private, client-side processing.",
     "nav": {
       "about": "About",
