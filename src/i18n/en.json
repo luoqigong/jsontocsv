@@ -4,7 +4,14 @@
     "privacyBadge": "Your data is processed 100% in the browser and never uploaded to any server.",
     "learnMore": "Learn more",
     "tagline": "Browser-first JSON workspace for clean table exports",
-    "footerDesc": "Free JSON to Excel & CSV converter with private, client-side processing."
+    "footerDesc": "Free JSON to Excel & CSV converter with private, client-side processing.",
+    "nav": {
+      "about": "About",
+      "contact": "Contact",
+      "privacy": "Privacy",
+      "cookies": "Cookies",
+      "terms": "Terms"
+    }
   },
   "input": {
     "paste": "Paste",
@@ -128,6 +135,14 @@
   },
   "about": {
     "title": "About JSON to Table",
+    "subtitle": "A free, privacy-first tool for converting JSON data to Excel and CSV formats.",
+    "howItWorks": "How It Works",
+    "browserProcessing": "Browser-Side Processing",
+    "browserProcessingDesc": "All JSON parsing, table generation, filtering, and file export runs entirely in your browser using JavaScript. No server-side processing is involved.",
+    "noAccount": "No Account Required",
+    "noAccountDesc": "Open the website, paste your JSON, and download your file. No registration, no login, no data collection.",
+    "builtWith": "Built With",
+    "builtWithDesc": "Vue 3, TypeScript, Vite, TanStack Table, TanStack Virtual, ExcelJS, Pinia, and UnoCSS. Open source libraries power the conversion engine; your data stays local.",
     "privacy": {
       "title": "Privacy Protection",
       "body": "All JSON parsing, transformation, and export happens in your browser. We will never see your data."
@@ -138,5 +153,116 @@
       "browser": "Recommended: latest Chrome / Edge / Firefox"
     },
     "back": "Back to Tool"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "desc": "Have a question, suggestion, or found a bug? We would love to hear from you.",
+    "emailTitle": "Email Support",
+    "emailDesc": "For general inquiries, bug reports, or feature requests, send us an email. We typically respond within 24-48 hours.",
+    "responseTime": "Response Time",
+    "bugReports": "Bug reports: within 24 hours",
+    "featureRequests": "Feature requests: within 48 hours",
+    "generalQuestions": "General questions: within 48 hours",
+    "beforeContact": "Before You Contact Us",
+    "beforeContactDesc": "JSON to Table is a 100% client-side tool. We do not have access to your data, nor can we recover lost conversions. If you are experiencing issues with a specific JSON file, please include a minimal sample that reproduces the problem.",
+    "back": "Back to Tool"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: {date}",
+    "section1Title": "1. Data Processing: 100% Client-Side",
+    "section1Desc": "JSON to Table is designed with privacy as a core principle. All JSON parsing, table transformation, filtering, and export operations happen entirely within your web browser. Your data is never uploaded to, stored on, or processed by any server.",
+    "section2Title": "2. What Data We Do Not Collect",
+    "section2Desc": "We do not collect, store, or have access to:",
+    "section2List": [
+      "Any JSON data you paste, upload, or convert",
+      "Your IP address or geolocation",
+      "Your browser history or browsing behavior",
+      "Any personally identifiable information (PII)",
+      "Files you upload for conversion"
+    ],
+    "section3Title": "3. Local Storage",
+    "section3Desc": "We use your browser's localStorage to remember your preferences (language selection and dark/light mode). This data stays on your device and is never transmitted to us or any third party. You can clear this data at any time through your browser settings.",
+    "section4Title": "4. Cookies and Analytics",
+    "section4Desc": "We do not use tracking cookies, analytics services (such as Google Analytics), or advertising cookies. The only cookies or local storage items are those used for your interface preferences as described above.",
+    "section5Title": "5. Third-Party Services",
+    "section5Desc": "JSON to Table does not integrate with any third-party services that process your data. The application is hosted on Cloudflare Pages, which may log basic access information (such as IP addresses) for security and performance purposes. This is standard CDN logging and is not linked to your conversion activities.",
+    "section6Title": "6. Your Rights",
+    "section6Desc": "Because we do not collect or store your personal data, there is no data to access, modify, or delete on our servers. All your data remains under your control on your own device. You can clear all locally stored preferences at any time through your browser settings.",
+    "section7Title": "7. Changes to This Policy",
+    "section7Desc": "We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically.",
+    "section8Title": "8. Contact Us",
+    "section8Desc": "If you have any questions about this privacy policy, please contact us at",
+    "back": "Back to Tool"
+  },
+  "cookies": {
+    "title": "Cookie Policy",
+    "lastUpdated": "Last updated: {date}",
+    "section1Title": "1. What Are Cookies?",
+    "section1Desc": "Cookies are small text files that websites place on your computer or mobile device when you visit them. They are widely used to make websites work more efficiently and to provide information to the website owners.",
+    "section2Title": "2. Our Approach: Minimal by Design",
+    "section2Desc": "JSON to Table takes a minimal approach to data storage. We do not use traditional HTTP cookies for tracking, analytics, or advertising. Instead, we use your browser's localStorage for a small set of essential preferences, as described below.",
+    "section3Title": "3. What We Store (and Why)",
+    "tableKey": "Storage Key",
+    "tablePurpose": "Purpose",
+    "tableType": "Type",
+    "localeKey": "j2t-locale",
+    "localePurpose": "Remember your language preference (Chinese or English)",
+    "localeType": "Essential preference",
+    "consentKey": "j2t-cookie-consent",
+    "consentPurpose": "Record your cookie consent choice",
+    "consentType": "Essential compliance",
+    "section4Title": "4. What We Do Not Use",
+    "section4Desc": "We explicitly do not use:",
+    "section4List": [
+      "Analytics cookies (Google Analytics, Mixpanel, etc.)",
+      "Advertising or targeting cookies",
+      "Social media tracking pixels",
+      "Third-party session cookies",
+      "Cross-site tracking mechanisms"
+    ],
+    "section5Title": "5. How to Manage or Clear Stored Data",
+    "section5Desc": "You can clear all locally stored data at any time through your browser settings:",
+    "chrome": "Chrome: Settings > Privacy and security > Clear browsing data",
+    "firefox": "Firefox: Settings > Privacy & Security > Clear Data",
+    "safari": "Safari: Preferences > Privacy > Manage Website Data",
+    "edge": "Edge: Settings > Privacy, search, and services > Clear browsing data",
+    "section6Title": "6. Contact",
+    "section6Desc": "If you have any questions about our cookie policy, please contact us at",
+    "back": "Back to Tool"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: {date}",
+    "section1Title": "1. Acceptance of Terms",
+    "section1Desc": "By accessing and using JSON to Table (\"the Service\"), you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Service.",
+    "section2Title": "2. Description of Service",
+    "section2Desc": "JSON to Table is a free, browser-based tool that allows users to convert JSON data into table formats (CSV and Excel). All processing occurs client-side in your browser. No account registration is required.",
+    "section3Title": "3. Privacy and Data Security",
+    "section3Desc": "We do not collect, store, or have access to any data you process through the Service. All JSON parsing, transformation, and export operations happen entirely within your browser. For full details, please refer to our",
+    "section4Title": "4. Acceptable Use",
+    "section4Desc": "You agree to use the Service only for lawful purposes. You may not:",
+    "section4List": [
+      "Use the Service to process data that violates any applicable laws or regulations",
+      "Attempt to interfere with or disrupt the Service or its infrastructure",
+      "Use automated scripts or bots to access the Service in ways that place unreasonable load on our systems",
+      "Reverse engineer or attempt to extract the source code of the Service"
+    ],
+    "section5Title": "5. Intellectual Property",
+    "section5Desc": "The Service, including its code, design, and branding, is the property of JSON to Table. You retain all rights to the data you process through the Service. We claim no ownership over your JSON data, CSV files, or Excel exports.",
+    "section6Title": "6. Limitation of Liability",
+    "section6Desc": "The Service is provided \"as is\" without warranties of any kind. Because all processing happens in your browser, we have no control over the accuracy of conversions or the integrity of your data. You are solely responsible for verifying the output before use. In no event shall we be liable for any damages arising from the use of the Service.",
+    "section7Title": "7. Modifications to the Service",
+    "section7Desc": "We reserve the right to modify, suspend, or discontinue the Service at any time without notice. We may also update these Terms of Service from time to time. Continued use of the Service after any changes constitutes acceptance of the updated terms.",
+    "section8Title": "8. Governing Law",
+    "section8Desc": "These terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law principles.",
+    "section9Title": "9. Contact Information",
+    "section9Desc": "For any questions about these Terms of Service, please contact us at",
+    "back": "Back to Tool"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "desc": "The page you are looking for does not exist or has been moved.",
+    "back": "Back to JSON to Table"
   }
 }

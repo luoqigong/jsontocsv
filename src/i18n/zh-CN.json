@@ -4,7 +4,14 @@
     "privacyBadge": "您的数据 100% 在浏览器中处理，不会上传到任何服务器。",
     "learnMore": "了解更多",
     "tagline": "基于浏览器的 JSON 工作区，专注纯净表格导出",
-    "footerDesc": "免费的 JSON 转 Excel 和 CSV 工具，私密本地处理。"
+    "footerDesc": "免费的 JSON 转 Excel 和 CSV 工具，私密本地处理。",
+    "nav": {
+      "about": "关于",
+      "contact": "联系我们",
+      "privacy": "隐私",
+      "cookies": "Cookies",
+      "terms": "条款"
+    }
   },
   "input": {
     "paste": "粘贴",
@@ -128,6 +135,14 @@
   },
   "about": {
     "title": "关于 JSON to Table",
+    "subtitle": "一个免费的、隐私优先的 JSON 转 Excel 和 CSV 工具。",
+    "howItWorks": "工作原理",
+    "browserProcessing": "浏览器端处理",
+    "browserProcessingDesc": "所有 JSON 解析、表格生成、筛选和文件导出完全在您的浏览器中使用 JavaScript 运行。不涉及任何服务器端处理。",
+    "noAccount": "无需账户",
+    "noAccountDesc": "打开网站，粘贴 JSON，下载文件。无需注册，无需登录，不收集数据。",
+    "builtWith": "技术栈",
+    "builtWithDesc": "Vue 3、TypeScript、Vite、TanStack Table、TanStack Virtual、ExcelJS、Pinia 和 UnoCSS。开源库驱动转换引擎，您的数据始终保留在本地。",
     "privacy": {
       "title": "隐私保护",
       "body": "所有 JSON 解析、转换、导出都在您的浏览器中完成。我们永远不会看到您的数据。"
@@ -138,5 +153,116 @@
       "browser": "建议使用 Chrome / Edge / Firefox 最新版本"
     },
     "back": "返回工具"
+  },
+  "contact": {
+    "title": "联系我们",
+    "desc": "有问题、建议或发现了错误？我们很乐意听取您的意见。",
+    "emailTitle": "邮件支持",
+    "emailDesc": "一般咨询、错误报告或功能请求，请发送邮件给我们。我们通常会在 24-48 小时内回复。",
+    "responseTime": "响应时间",
+    "bugReports": "错误报告：24 小时内",
+    "featureRequests": "功能请求：48 小时内",
+    "generalQuestions": "一般问题：48 小时内",
+    "beforeContact": "联系我们之前",
+    "beforeContactDesc": "JSON to Table 是一个 100% 客户端工具。我们无法访问您的数据，也无法恢复丢失的转换。如果您在使用特定 JSON 文件时遇到问题，请附上可重现问题的最小示例。",
+    "back": "返回工具"
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "lastUpdated": "最后更新：{date}",
+    "section1Title": "1. 数据处理：100% 客户端",
+    "section1Desc": "JSON to Table 以隐私为核心设计原则。所有 JSON 解析、表格转换、筛选和导出操作完全在您的网络浏览器中进行。您的数据永远不会被上传到、存储在或处理于任何服务器。",
+    "section2Title": "2. 我们不收集哪些数据",
+    "section2Desc": "我们不收集、存储或访问：",
+    "section2List": [
+      "您粘贴、上传或转换的任何 JSON 数据",
+      "您的 IP 地址或地理位置",
+      "您的浏览器历史或浏览行为",
+      "任何个人身份信息 (PII)",
+      "您上传用于转换的文件"
+    ],
+    "section3Title": "3. 本地存储",
+    "section3Desc": "我们使用浏览器的 localStorage 来记住您的偏好设置（语言选择和深色/浅色模式）。这些数据保留在您的设备上，不会传输给我们或任何第三方。您可以随时通过浏览器设置清除这些数据。",
+    "section4Title": "4. Cookie 和分析",
+    "section4Desc": "我们不使用跟踪 Cookie、分析服务（如 Google Analytics）或广告 Cookie。唯一的 Cookie 或本地存储项是上述用于界面偏好的项目。",
+    "section5Title": "5. 第三方服务",
+    "section5Desc": "JSON to Table 不集成任何处理您数据的第三方服务。应用托管在 Cloudflare Pages 上，其可能记录基本访问信息（如 IP 地址）用于安全和性能目的。这是标准的 CDN 日志记录，与您的转换活动无关。",
+    "section6Title": "6. 您的权利",
+    "section6Desc": "由于我们不收集或存储您的个人数据，我们的服务器上没有数据可供访问、修改或删除。您的所有数据始终由您自己控制在您的设备上。您可以随时通过浏览器设置清除所有本地存储的偏好。",
+    "section7Title": "7. 政策变更",
+    "section7Desc": "我们可能会不时更新此隐私政策。任何变更将发布在此页面并附上更新日期。我们鼓励您定期查看此政策。",
+    "section8Title": "8. 联系我们",
+    "section8Desc": "如果您对此隐私政策有任何疑问，请通过以下方式联系我们：",
+    "back": "返回工具"
+  },
+  "cookies": {
+    "title": "Cookie 政策",
+    "lastUpdated": "最后更新：{date}",
+    "section1Title": "1. 什么是 Cookie？",
+    "section1Desc": "Cookie 是网站在您访问时放置在您的计算机或移动设备上的小型文本文件。它们被广泛用于使网站更高效地运行，并向网站所有者提供信息。",
+    "section2Title": "2. 我们的理念：极简设计",
+    "section2Desc": "JSON to Table 对数据存储采取极简方式。我们不使用传统的 HTTP Cookie 进行跟踪、分析或广告。相反，我们使用浏览器的 localStorage 存储少量必要偏好，如下所述。",
+    "section3Title": "3. 我们存储什么（以及为什么）",
+    "tableKey": "存储键",
+    "tablePurpose": "用途",
+    "tableType": "类型",
+    "localeKey": "j2t-locale",
+    "localePurpose": "记住您的语言偏好（中文或英文）",
+    "localeType": "必要偏好",
+    "consentKey": "j2t-cookie-consent",
+    "consentPurpose": "记录您的 Cookie 同意选择",
+    "consentType": "必要合规",
+    "section4Title": "4. 我们不使用什么",
+    "section4Desc": "我们明确不使用：",
+    "section4List": [
+      "分析 Cookie（Google Analytics、Mixpanel 等）",
+      "广告或定向 Cookie",
+      "社交媒体跟踪像素",
+      "第三方会话 Cookie",
+      "跨站跟踪机制"
+    ],
+    "section5Title": "5. 如何管理或清除存储的数据",
+    "section5Desc": "您可以随时通过浏览器设置清除所有本地存储的数据：",
+    "chrome": "Chrome：设置 > 隐私和安全 > 清除浏览数据",
+    "firefox": "Firefox：设置 > 隐私与安全 > 清除数据",
+    "safari": "Safari：偏好设置 > 隐私 > 管理网站数据",
+    "edge": "Edge：设置 > 隐私、搜索和服务 > 清除浏览数据",
+    "section6Title": "6. 联系方式",
+    "section6Desc": "如果您对我们的 Cookie 政策有任何疑问，请通过以下方式联系我们：",
+    "back": "返回工具"
+  },
+  "terms": {
+    "title": "服务条款",
+    "lastUpdated": "最后更新：{date}",
+    "section1Title": "1. 条款接受",
+    "section1Desc": "访问和使用 JSON to Table（\"本服务\"）即表示您接受并同意受这些服务条款的约束。如果您不同意这些条款，请不要使用本服务。",
+    "section2Title": "2. 服务描述",
+    "section2Desc": "JSON to Table 是一个免费的、基于浏览器的工具，允许用户将 JSON 数据转换为表格格式（CSV 和 Excel）。所有处理都在您的浏览器中客户端进行。无需账户注册。",
+    "section3Title": "3. 隐私与数据安全",
+    "section3Desc": "我们不收集、存储或访问您通过本服务处理的任何数据。所有 JSON 解析、转换和导出操作完全在您的浏览器中进行。详情请参阅我们的",
+    "section4Title": "4. 可接受的使用",
+    "section4Desc": "您同意仅将本服务用于合法目的。您不得：",
+    "section4List": [
+      "使用本服务处理违反任何适用法律法规的数据",
+      "试图干扰或破坏本服务或其基础设施",
+      "使用自动化脚本或机器人以对我们的系统造成不合理负载的方式访问本服务",
+      "对本服务进行反向工程或试图提取其源代码"
+    ],
+    "section5Title": "5. 知识产权",
+    "section5Desc": "本服务，包括其代码、设计和品牌，均为 JSON to Table 的财产。您保留通过本服务处理的数据的所有权利。我们对您的 JSON 数据、CSV 文件或 Excel 导出不主张任何所有权。",
+    "section6Title": "6. 责任限制",
+    "section6Desc": "本服务按\"现状\"提供，不提供任何形式的担保。由于所有处理都在您的浏览器中进行，我们无法控制转换的准确性或数据的完整性。您有责任在使用前验证输出。在任何情况下，我们均不对因使用本服务而产生的任何损害承担责任。",
+    "section7Title": "7. 服务修改",
+    "section7Desc": "我们保留随时修改、暂停或终止本服务的权利，恕不另行通知。我们也可能不时更新这些服务条款。在任何变更之后继续使用本服务即表示接受更新后的条款。",
+    "section8Title": "8. 适用法律",
+    "section8Desc": "这些条款应受适用法律管辖并按其解释，不考虑法律冲突原则。",
+    "section9Title": "9. 联系方式",
+    "section9Desc": "如有关于这些服务条款的任何问题，请通过以下方式联系我们：",
+    "back": "返回工具"
+  },
+  "notFound": {
+    "title": "页面未找到",
+    "desc": "您访问的页面不存在或已被移动。",
+    "back": "返回 JSON to Table"
   }
 }

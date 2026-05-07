@@ -91,19 +91,19 @@ onMounted(() => {
 
           <nav class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
             <RouterLink to="/about" class="transition-colors hover:text-primary-600 dark:hover:text-primary-400">
-              About
+              {{ t('app.nav.about') }}
             </RouterLink>
             <RouterLink to="/contact" class="transition-colors hover:text-primary-600 dark:hover:text-primary-400">
-              Contact
+              {{ t('app.nav.contact') }}
             </RouterLink>
             <RouterLink to="/privacy" class="transition-colors hover:text-primary-600 dark:hover:text-primary-400">
-              Privacy
+              {{ t('app.nav.privacy') }}
             </RouterLink>
             <RouterLink to="/cookies" class="transition-colors hover:text-primary-600 dark:hover:text-primary-400">
-              Cookies
+              {{ t('app.nav.cookies') }}
             </RouterLink>
             <RouterLink to="/terms" class="transition-colors hover:text-primary-600 dark:hover:text-primary-400">
-              Terms
+              {{ t('app.nav.terms') }}
             </RouterLink>
           </nav>
         </div>

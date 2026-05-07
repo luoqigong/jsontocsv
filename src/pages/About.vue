@@ -28,10 +28,10 @@ useSchema({
 <template>
   <div class="max-w-2xl mx-auto p-6">
     <h1 class="text-2xl font-bold mb-2 text-gray-900 dark:text-gray-100">
-      About JSON to Table
+      {{ t('about.title') }}
     </h1>
     <p class="text-gray-500 dark:text-gray-400 mb-6 text-sm">
-      A free, privacy-first tool for converting JSON data to Excel and CSV formats.
+      {{ t('about.subtitle') }}
     </p>
 
     <div class="space-y-6">
@@ -48,23 +48,23 @@ useSchema({
       <!-- How It Works -->
       <section class="bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-700 p-5">
         <h2 class="text-lg font-semibold mb-3 text-gray-900 dark:text-gray-100">
-          How It Works
+          {{ t('about.howItWorks') }}
         </h2>
         <div class="space-y-3">
           <div>
             <h3 class="font-medium text-gray-900 dark:text-gray-100 mb-1">
-              Browser-Side Processing
+              {{ t('about.browserProcessing') }}
             </h3>
             <p class="text-sm text-gray-600 dark:text-gray-300">
-              All JSON parsing, table generation, filtering, and file export runs entirely in your browser using JavaScript. No server-side processing is involved.
+              {{ t('about.browserProcessingDesc') }}
             </p>
           </div>
           <div>
             <h3 class="font-medium text-gray-900 dark:text-gray-100 mb-1">
-              No Account Required
+              {{ t('about.noAccount') }}
             </h3>
             <p class="text-sm text-gray-600 dark:text-gray-300">
-              Open the website, paste your JSON, and download your file. No registration, no login, no data collection.
+              {{ t('about.noAccountDesc') }}
             </p>
           </div>
         </div>
@@ -84,11 +84,10 @@ useSchema({
       <!-- Tech Stack -->
       <section class="bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-700 p-5">
         <h2 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
-          Built With
+          {{ t('about.builtWith') }}
         </h2>
         <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-          Vue 3, TypeScript, Vite, TanStack Table, TanStack Virtual, ExcelJS, Pinia, and UnoCSS.
-          Open source libraries power the conversion engine; your data stays local.
+          {{ t('about.builtWithDesc') }}
         </p>
       </section>
 

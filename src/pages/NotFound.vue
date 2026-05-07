@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { usePageMeta } from '@/composables/usePageMeta'
 import { useSchema } from '@/composables/useSchema'
+
+const { t } = useI18n()
 
 usePageMeta({
   title: 'Page Not Found | JSON to Table',
@@ -23,16 +26,16 @@ useSchema({
         404
       </h1>
       <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
-        Page Not Found
+        {{ t('notFound.title') }}
       </h2>
       <p class="text-gray-600 dark:text-gray-400 mb-6">
-        The page you are looking for does not exist or has been moved.
+        {{ t('notFound.desc') }}
       </p>
       <RouterLink
         to="/"
         class="inline-flex items-center px-5 py-2.5 rounded-lg bg-primary-600 text-white font-medium hover:bg-primary-700 transition-colors"
       >
-        Back to JSON to Table
+        {{ t('notFound.back') }}
       </RouterLink>
     </div>
   </div>
