@@ -30,20 +30,34 @@ export const router = createRouter({
   },
 })
 
-function trackPageView(path: string) {
+let hasTrackedInitialPageLoad = false
+
+function trackSpaPageView(path: string, referrer?: string) {
   if (typeof window.gtag !== 'function') return false
-  window.gtag('config', 'G-42LXEJW456', {
+
+  window.gtag('event', 'page_view', {
+    page_title: document.title,
     page_path: path,
     page_location: window.location.origin + path,
+    page_referrer: referrer,
   })
   return true
 }
 
-router.afterEach((to) => {
+router.afterEach((to, from) => {
   const path = to.fullPath
-  if (!trackPageView(path)) {
+
+  // The initial page load is already tracked by the base gtag config in index.html.
+  if (!hasTrackedInitialPageLoad) {
+    hasTrackedInitialPageLoad = true
+    return
+  }
+
+  if (!trackSpaPageView(path, from.fullPath ? window.location.origin + from.fullPath : document.referrer)) {
     const timer = setInterval(() => {
-      if (trackPageView(path)) clearInterval(timer)
+      if (trackSpaPageView(path, from.fullPath ? window.location.origin + from.fullPath : document.referrer)) {
+        clearInterval(timer)
+      }
     }, 100)
     setTimeout(() => clearInterval(timer), 3000)
   }
