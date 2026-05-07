@@ -2,7 +2,9 @@
   "app": {
     "title": "JSON to Table",
     "privacyBadge": "Your data is processed 100% in the browser and never uploaded to any server.",
-    "learnMore": "Learn more"
+    "learnMore": "Learn more",
+    "tagline": "Browser-first JSON workspace for clean table exports",
+    "footerDesc": "Free JSON to Excel & CSV converter with private, client-side processing."
   },
   "input": {
     "paste": "Paste",
@@ -10,18 +12,28 @@
     "placeholder": "Paste JSON here...",
     "dragDrop": "Drag and drop files here or click to upload",
     "maxSize": "Max 50MB",
+    "rawInput": "Raw Input",
+    "rawInputDesc": "Supports JSON arrays, wrapped payloads, and JSONL",
+    "quickExamples": "Quick Examples",
+    "examplesDesc": "Load sample payloads without changing any tool logic",
     "samples": {
       "flat": "Flat Array",
       "nested": "Nested Objects",
       "api": "API Wrapped",
       "jsonl": "JSON Lines"
-    }
+    },
+    "fileDesc": "Load local files directly into the workspace without uploading to a server.",
+    "fileTypes": "Supports .json, .jsonl, .txt (max 50MB)",
+    "fileTooLarge": "File size exceeds 50MB limit",
+    "readFileFailed": "Failed to read file: {msg}"
   },
   "path": {
-    "dataArray": "Data Array Path"
+    "dataPath": "Data Path",
+    "desc": "When the input contains nested wrapper structures, select the array path to use as the table body."
   },
   "nesting": {
     "title": "Nesting Strategy",
+    "desc": "Control how arrays and nested objects expand into the result table",
     "flatten": "Flatten",
     "stringify": "Stringify",
     "explode": "Explode",
@@ -34,20 +46,85 @@
   "filter": {
     "search": "Search all columns...",
     "clear": "Clear",
-    "addCondition": "Add Condition"
+    "addCondition": "Add Condition",
+    "value": "Value",
+    "delete": "Delete",
+    "hint": "Stack multiple conditions to fine-tune the currently visible data."
   },
   "export": {
     "csv": "Export CSV",
     "excel": "Export Excel",
     "options": "Export Options",
+    "csvOptions": "CSV Options",
     "delimiter": "Delimiter",
     "bom": "UTF-8 BOM",
+    "includeBom": "Include UTF-8 BOM",
     "header": "Include Header",
-    "filteredOnly": "Filtered Rows Only"
+    "includeHeader": "Include Header",
+    "filteredOnly": "Filtered Rows Only",
+    "delimiterComma": ", (comma)",
+    "delimiterSemicolon": "; (semicolon)",
+    "delimiterTab": "\\t (tab)",
+    "delimiterPipe": "| (pipe)"
   },
   "table": {
     "rows": "rows",
-    "noData": "No data"
+    "noData": "No data",
+    "emptyTitle": "Paste JSON data to see the table preview",
+    "emptyDesc": "After parsing, your rows appear here with sorting, filtering, and column edits already applied."
+  },
+  "home": {
+    "step": "Step {n}",
+    "clientSide": "100% Client-Side",
+    "excelCsvExport": "Excel / CSV Export",
+    "nestedJsonReady": "Nested JSON Ready",
+    "title": "JSON to Table: Convert JSON to Excel & CSV Online",
+    "description": "Paste JSON, preview structured rows instantly, fine-tune columns and filters, then export polished Excel or CSV files without sending your data anywhere.",
+    "workflow": "Workflow",
+    "workflowDesc": "Paste, configure, export in one screen",
+    "privacy": "Privacy",
+    "privacyDesc": "Data stays inside your browser session",
+    "structure": "Structure",
+    "structureDesc": "Handles flat, wrapped, nested, and JSONL input",
+    "fastWorkspace": "Fast local workspace",
+    "fastWorkspaceDesc": "Built for large everyday API payloads with path detection, nested strategies, editable columns, and filterable preview tables.",
+    "privacyDetailsTitle": "Need the full privacy details?",
+    "privacyDetailsDesc": "Every transformation runs in-browser. No upload pipeline, no server processing.",
+    "readPrivacy": "Read Privacy Policy",
+    "dataInput": "Data Input",
+    "dataInputDesc": "Paste raw JSON, load an example, or drop a local file.",
+    "structureSetup": "Structure Setup",
+    "structureSetupDesc": "Choose the array path and define how nested data should expand.",
+    "previewFilters": "Preview & Filters",
+    "previewFiltersDesc": "Search, refine, and inspect the resulting table before export.",
+    "columnManager": "Column Manager",
+    "columnManagerDesc": "Rename, show or hide columns, and adjust detected data types.",
+    "exportStudio": "Export Studio",
+    "exportStudioDesc": "Finalize CSV options or export a styled Excel workbook.",
+    "faqTitle": "How It Works & FAQ",
+    "faqDesc": "Understand the supported input structures, nested handling, and export options.",
+    "faqStep1Title": "Step 1: Paste or Upload Your JSON Data",
+    "faqStep1Desc": "Paste JSON directly into the text area, or use JSON Lines (JSONL). The tool accepts arrays, nested objects, and API-wrapped responses.",
+    "faqStep2Title": "Step 2: Configure Columns and Filters",
+    "faqStep2Desc": "Rename columns, reorder their meaning through type selection, hide unused fields, and add filter conditions to focus on matching rows.",
+    "faqStep3Title": "Step 3: Download Excel or CSV File",
+    "faqStep3Desc": "Export styled Excel files with formatting or generate CSV output with your preferred delimiter, header behavior, and BOM settings.",
+    "faqNestedTitle": "Convert Nested JSON to Excel Without Coding",
+    "faqNestedDesc": "Objects like {example} become columns {column} automatically. No manual transformation needed.",
+    "faqStrategiesTitle": "Handle Array Fields with 4 Built-In Strategies",
+    "faqStrategiesDesc": "Choose **Flatten**, **Stringify**, **Explode**, or **Multi-Sheet** depending on whether you want dot-notation columns, JSON text, extra rows, or separate worksheets.",
+    "faqCsvTitle": "JSON to CSV: Custom Delimiters and UTF-8 BOM",
+    "faqCsvDesc": "Export CSV with comma, semicolon, tab, or pipe delimiters. Include headers, enable UTF-8 BOM for Excel on Windows, and export only filtered rows when needed.",
+    "faqSafeTitle": "Is My JSON Data Safe?",
+    "faqSafeDesc": "All parsing, transformation, filtering, and export operations happen inside your browser. Your JSON data is never uploaded to a server or stored remotely.",
+    "faqReadPrivacy": "Read the Privacy Policy",
+    "faqFormatsTitle": "What JSON Formats Are Supported?",
+    "faqStandardArrays": "Standard JSON Arrays",
+    "faqStandardArraysDesc": "Arrays of objects with flat or nested properties, such as {example}.",
+    "faqApiWrappers": "API Response Wrappers",
+    "faqApiWrappersDesc": "The tool detects paths such as {path} from wrapped payloads like {wrapped}.",
+    "faqJsonl": "JSON Lines (JSONL)",
+    "faqJsonlDesc": "One JSON object per line for logs or streams. JSONL is detected automatically and normalized into a table."
   },
   "about": {
     "title": "About JSON to Table",

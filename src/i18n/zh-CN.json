@@ -2,7 +2,9 @@
   "app": {
     "title": "JSON to Table",
     "privacyBadge": "您的数据 100% 在浏览器中处理，不会上传到任何服务器。",
-    "learnMore": "了解更多"
+    "learnMore": "了解更多",
+    "tagline": "基于浏览器的 JSON 工作区，专注纯净表格导出",
+    "footerDesc": "免费的 JSON 转 Excel 和 CSV 工具，私密本地处理。"
   },
   "input": {
     "paste": "粘贴",
@@ -10,44 +12,119 @@
     "placeholder": "在此粘贴 JSON...",
     "dragDrop": "拖拽文件到此处或点击上传",
     "maxSize": "最大 50MB",
+    "rawInput": "原始输入",
+    "rawInputDesc": "支持 JSON 数组、包装响应和 JSONL",
+    "quickExamples": "快速示例",
+    "examplesDesc": "加载示例数据，不影响当前配置",
     "samples": {
       "flat": "扁平数组",
       "nested": "嵌套对象",
       "api": "API 包裹",
       "jsonl": "JSON Lines"
-    }
+    },
+    "fileDesc": "支持将本地文件直接载入当前工作区，无需上传到服务器。",
+    "fileTypes": "支持 .json, .jsonl, .txt (最大 50MB)",
+    "fileTooLarge": "文件大小超过 50MB 限制",
+    "readFileFailed": "读取文件失败：{msg}"
   },
   "path": {
-    "dataArray": "数据数组路径"
+    "dataPath": "数据路径",
+    "desc": "当输入包含多层包装结构时，选择要作为表格主体的数组路径。"
   },
   "nesting": {
-    "title": "嵌套处理策略",
+    "title": "嵌套策略",
+    "desc": "控制数组与嵌套对象在结果表格中的展开方式",
     "flatten": "扁平化",
-    "stringify": "字符串化",
-    "explode": "爆炸展开",
-    "multiSheet": "多 Sheet"
+    "stringify": "序列化",
+    "explode": "展开",
+    "multiSheet": "多工作表"
   },
   "columns": {
     "title": "列管理",
     "reset": "重置"
   },
   "filter": {
-    "search": "搜索所有列...",
+    "search": "全局搜索...",
     "clear": "清除",
-    "addCondition": "添加条件"
+    "addCondition": "添加条件",
+    "value": "值",
+    "delete": "删除",
+    "hint": "可叠加多个条件，对当前可见数据做精细筛选。"
   },
   "export": {
     "csv": "导出 CSV",
     "excel": "导出 Excel",
     "options": "导出选项",
+    "csvOptions": "CSV 选项",
     "delimiter": "分隔符",
     "bom": "UTF-8 BOM",
+    "includeBom": "包含 UTF-8 BOM",
     "header": "包含表头",
-    "filteredOnly": "仅过滤后的行"
+    "includeHeader": "包含表头",
+    "filteredOnly": "仅过滤后的行",
+    "delimiterComma": ", (逗号)",
+    "delimiterSemicolon": "; (分号)",
+    "delimiterTab": "\\t (制表符)",
+    "delimiterPipe": "| (竖线)"
   },
   "table": {
     "rows": "行",
-    "noData": "无数据"
+    "noData": "无数据",
+    "emptyTitle": "粘贴 JSON 数据以预览表格",
+    "emptyDesc": "解析后，您的数据行将显示在这里，排序、筛选和列编辑已自动应用。"
+  },
+  "home": {
+    "step": "步骤 {n}",
+    "clientSide": "100% 本地处理",
+    "excelCsvExport": "Excel / CSV 导出",
+    "nestedJsonReady": "支持嵌套 JSON",
+    "title": "JSON to Table：在线将 JSON 转换为 Excel 和 CSV",
+    "description": "粘贴 JSON，即时预览结构化行，微调列和筛选条件，然后导出精美的 Excel 或 CSV 文件，无需上传数据。",
+    "workflow": "工作流",
+    "workflowDesc": "在一个界面中粘贴、配置、导出",
+    "privacy": "隐私",
+    "privacyDesc": "数据始终保留在您的浏览器会话中",
+    "structure": "结构",
+    "structureDesc": "支持扁平、包装、嵌套和 JSONL 输入",
+    "fastWorkspace": "快速本地工作区",
+    "fastWorkspaceDesc": "为大型日常 API 载荷而构建，支持路径检测、嵌套策略、可编辑列和可筛选预览表。",
+    "privacyDetailsTitle": "需要完整的隐私详情？",
+    "privacyDetailsDesc": "所有转换都在浏览器内运行。没有上传通道，没有服务器处理。",
+    "readPrivacy": "阅读隐私政策",
+    "dataInput": "数据输入",
+    "dataInputDesc": "粘贴原始 JSON、加载示例或拖入本地文件。",
+    "structureSetup": "结构设置",
+    "structureSetupDesc": "选择数组路径并定义嵌套数据的展开方式。",
+    "previewFilters": "预览与筛选",
+    "previewFiltersDesc": "在导出前搜索、优化并检查结果表。",
+    "columnManager": "列管理",
+    "columnManagerDesc": "重命名、显示或隐藏列，并调整检测到的数据类型。",
+    "exportStudio": "导出工作室",
+    "exportStudioDesc": "最终确定 CSV 选项或导出样式化的 Excel 工作簿。",
+    "faqTitle": "使用方法与常见问题",
+    "faqDesc": "了解支持的输入结构、嵌套处理和导出选项。",
+    "faqStep1Title": "步骤 1：粘贴或上传 JSON 数据",
+    "faqStep1Desc": "将 JSON 直接粘贴到文本区域，或使用 JSON Lines（JSONL）。该工具接受数组、嵌套对象和 API 包装响应。",
+    "faqStep2Title": "步骤 2：配置列和筛选条件",
+    "faqStep2Desc": "重命名列，通过类型选择重新排列含义，隐藏未使用的字段，并添加筛选条件以聚焦匹配行。",
+    "faqStep3Title": "步骤 3：下载 Excel 或 CSV 文件",
+    "faqStep3Desc": "导出带有样式的 Excel 文件，或使用您首选的分隔符、表头行为和 BOM 设置生成 CSV 输出。",
+    "faqNestedTitle": "无需编码即可将嵌套 JSON 转换为 Excel",
+    "faqNestedDesc": "像 {example} 这样的对象会自动变为列 {column}。无需手动转换。",
+    "faqStrategiesTitle": "使用 4 种内置策略处理数组字段",
+    "faqStrategiesDesc": "根据您需要点符号列、JSON 文本、额外行还是单独工作表，选择**扁平化**、**序列化**、**展开**或**多工作表**。",
+    "faqCsvTitle": "JSON 转 CSV：自定义分隔符和 UTF-8 BOM",
+    "faqCsvDesc": "使用逗号、分号、制表符或管道符分隔符导出 CSV。包含表头，为 Windows 上的 Excel 启用 UTF-8 BOM，并在需要时仅导出行筛选后的数据。",
+    "faqSafeTitle": "我的 JSON 数据安全吗？",
+    "faqSafeDesc": "所有解析、转换、筛选和导出操作都在您的浏览器中进行。您的 JSON 数据永远不会上传到服务器或远程存储。",
+    "faqReadPrivacy": "阅读隐私政策",
+    "faqFormatsTitle": "支持哪些 JSON 格式？",
+    "faqStandardArrays": "标准 JSON 数组",
+    "faqStandardArraysDesc": "具有扁平或嵌套属性的对象数组，例如 {example}。",
+    "faqApiWrappers": "API 响应包装器",
+    "faqApiWrappersDesc": "该工具从包装载荷中检测路径，例如从 {wrapped} 中检测 {path}。",
+    "faqJsonl": "JSON Lines（JSONL）",
+    "faqJsonlDesc": "每行一个 JSON 对象，用于日志或流。JSONL 被自动检测并规范化为表格。"
   },
   "about": {
     "title": "关于 JSON to Table",

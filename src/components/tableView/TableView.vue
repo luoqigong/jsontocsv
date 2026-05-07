@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import {
   useVueTable,
   getCoreRowModel,
@@ -10,6 +11,7 @@ import { useFiltersStore } from '@/stores/filters'
 import { useColumnsStore } from '@/stores/columns'
 import AppBadge from '@/components/common/AppBadge.vue'
 
+const { t } = useI18n()
 const filtersStore = useFiltersStore()
 const columnsStore = useColumnsStore()
 
@@ -47,7 +49,7 @@ function getSortIndicator(header: ReturnType<typeof table.getFlatHeaders>[number
   <div class="min-w-0 flex h-full flex-col gap-2">
     <div class="flex shrink-0 items-center justify-between px-1">
       <AppBadge variant="default">
-        {{ filtersStore.filteredCount }} / {{ filtersStore.totalCount }} rows
+        {{ filtersStore.filteredCount }} / {{ filtersStore.totalCount }} {{ t('table.rows') }}
       </AppBadge>
     </div>
 
@@ -73,10 +75,10 @@ function getSortIndicator(header: ReturnType<typeof table.getFlatHeaders>[number
           <line x1="9" y1="21" x2="9" y2="9" />
         </svg>
         <p class="text-base font-medium text-slate-600 dark:text-gray-300">
-          Paste JSON data to see the table preview
+          {{ t('table.emptyTitle') }}
         </p>
         <p class="mt-2 max-w-md text-sm leading-6 text-slate-400 dark:text-gray-500">
-          After parsing, your rows appear here with sorting, filtering, and column edits already applied.
+          {{ t('table.emptyDesc') }}
         </p>
       </div>
 

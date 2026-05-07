@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 const emit = defineEmits<{
   load: [content: string]
 }>()
+
+const { t } = useI18n()
 
 const isDragging = ref(false)
 const fileInputRef = ref<HTMLInputElement | null>(null)
@@ -13,13 +16,13 @@ const ACCEPT_TYPES = '.json,.jsonl,.txt'
 
 function handleFile(file: File) {
   if (file.size > MAX_SIZE) {
-    alert('文件大小超过 50MB 限制 / File size exceeds 50MB limit')
+    alert(t('input.fileTooLarge'))
     return
   }
   file.text().then((content) => {
     emit('load', content)
   }).catch((err) => {
-    alert('读取文件失败 / Failed to read file: ' + err.message)
+    alert(t('input.readFileFailed', { msg: err.message }))
   })
 }
 
@@ -74,13 +77,13 @@ function onClick() {
       <div class="i-carbon-upload text-4xl" />
     </div>
     <p class="mt-5 text-base font-medium text-slate-800 dark:text-gray-100">
-      拖拽文件到此处，或点击上传
+      {{ t('input.dragDrop') }}
     </p>
     <p class="mt-2 max-w-xs text-sm leading-6 text-slate-500 dark:text-gray-400">
-      支持将本地文件直接载入当前工作区，无需上传到服务器。
+      {{ t('input.fileDesc') }}
     </p>
     <p class="mt-3 text-xs text-slate-400 dark:text-gray-500">
-      支持 .json, .jsonl, .txt (最大 50MB)
+      {{ t('input.fileTypes') }}
     </p>
   </div>
 </template>

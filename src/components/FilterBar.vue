@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useFiltersStore } from '@/stores/filters'
 import { useColumnsStore } from '@/stores/columns'
 import type { FilterCondition } from '@/types'
@@ -7,6 +8,7 @@ import AppButton from '@/components/common/AppButton.vue'
 import AppSelect from '@/components/common/AppSelect.vue'
 import AppBadge from '@/components/common/AppBadge.vue'
 
+const { t } = useI18n()
 const filtersStore = useFiltersStore()
 const columnsStore = useColumnsStore()
 
@@ -61,16 +63,16 @@ function updateConditionValue(index: number, value: string) {
       <input
         :value="filtersStore.globalSearch"
         type="text"
-        placeholder="全局搜索..."
+        :placeholder="t('filter.search')"
         class="min-w-0 flex-1 rounded-xl border border-slate-200 bg-slate-50/80 px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition-all focus:border-primary-400 focus:bg-white focus:ring-4 focus:ring-primary-100 dark:border-gray-700 dark:bg-gray-950/70 dark:text-gray-100 dark:placeholder-gray-500 dark:focus:border-primary-500 dark:focus:ring-primary-900/30"
         @input="filtersStore.setGlobalSearch(($event.target as HTMLInputElement).value)"
       >
       <div class="min-w-0 flex flex-wrap items-center gap-2">
         <AppButton variant="secondary" size="sm" @click="filtersStore.clearFilters">
-          清除
+          {{ t('filter.clear') }}
         </AppButton>
         <AppBadge variant="default">
-          {{ filtersStore.filteredCount }} / {{ filtersStore.totalCount }} rows
+          {{ filtersStore.filteredCount }} / {{ filtersStore.totalCount }} {{ t('table.rows') }}
         </AppBadge>
       </div>
     </div>
@@ -96,23 +98,23 @@ function updateConditionValue(index: number, value: string) {
         <input
           :value="condition.value"
           type="text"
-          placeholder="值"
+          :placeholder="t('filter.value')"
           class="min-w-0 flex-1 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 outline-none transition-all focus:border-primary-400 focus:ring-4 focus:ring-primary-100 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500 dark:focus:border-primary-500 dark:focus:ring-primary-900/30"
           @input="updateConditionValue(index, ($event.target as HTMLInputElement).value)"
         >
 
         <AppButton variant="danger" size="sm" @click="filtersStore.removeCondition(index)">
-          删除
+          {{ t('filter.delete') }}
         </AppButton>
       </div>
     </div>
 
     <div class="flex flex-wrap items-center justify-between gap-3">
       <p class="text-xs text-slate-500 dark:text-gray-400">
-        可叠加多个条件，对当前可见数据做精细筛选。
+        {{ t('filter.hint') }}
       </p>
       <AppButton variant="secondary" size="sm" @click="addCondition">
-        添加条件
+        {{ t('filter.addCondition') }}
       </AppButton>
     </div>
   </div>

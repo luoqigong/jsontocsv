@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useDataStore } from '@/stores/data'
 import AppButton from '@/components/common/AppButton.vue'
 import FileUploader from './FileUploader.vue'
 
+const { t } = useI18n()
 const dataStore = useDataStore()
 const activeTab = ref<'paste' | 'upload'>('paste')
 
@@ -67,7 +69,7 @@ function onFileLoaded(content: string) {
           : 'text-slate-500 hover:text-slate-700 dark:text-gray-400 dark:hover:text-gray-200'"
         @click="activeTab = 'paste'"
       >
-        粘贴 / Paste
+        {{ t('input.paste') }}
       </button>
       <button
         class="flex-1 cursor-pointer rounded-xl px-3 py-2 text-sm font-medium transition-all"
@@ -76,23 +78,23 @@ function onFileLoaded(content: string) {
           : 'text-slate-500 hover:text-slate-700 dark:text-gray-400 dark:hover:text-gray-200'"
         @click="activeTab = 'upload'"
       >
-        上传文件 / Upload
+        {{ t('input.file') }}
       </button>
     </div>
 
     <div v-if="activeTab === 'paste'" class="min-w-0 flex flex-col gap-3">
       <div class="flex flex-wrap items-center justify-between gap-3">
         <p class="text-xs font-medium uppercase tracking-[0.18em] text-slate-400 dark:text-gray-500">
-          Raw Input
+          {{ t('input.rawInput') }}
         </p>
         <p class="text-xs text-slate-500 dark:text-gray-400">
-          Supports JSON arrays, wrapped payloads, and JSONL
+          {{ t('input.rawInputDesc') }}
         </p>
       </div>
       <textarea
         :value="dataStore.rawInput"
         class="box-border h-72 max-w-full w-full min-w-0 rounded-[1.25rem] border border-slate-200 bg-slate-50/80 p-4 font-mono text-sm leading-6 text-slate-900 shadow-inner outline-none transition-all focus:border-primary-400 focus:bg-white focus:ring-4 focus:ring-primary-100 dark:border-gray-700 dark:bg-gray-950/80 dark:text-gray-100 dark:focus:border-primary-500 dark:focus:ring-primary-900/30"
-        placeholder="在此粘贴 JSON 数据... / Paste JSON data here..."
+        :placeholder="t('input.placeholder')"
         @input="onTextareaInput"
       />
       <p v-if="dataStore.parseError" class="rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-600 dark:border-red-900/60 dark:bg-red-950/40 dark:text-red-300">
@@ -107,24 +109,24 @@ function onFileLoaded(content: string) {
     <div class="space-y-3">
       <div class="flex flex-wrap items-center justify-between gap-3">
         <p class="text-xs font-medium uppercase tracking-[0.18em] text-slate-400 dark:text-gray-500">
-          Quick Examples
+          {{ t('input.quickExamples') }}
         </p>
         <p class="text-xs text-slate-500 dark:text-gray-400">
-          Load sample payloads without changing any tool logic
+          {{ t('input.examplesDesc') }}
         </p>
       </div>
       <div class="flex flex-wrap gap-2">
         <AppButton size="sm" variant="secondary" @click="loadExample('flatArray')">
-          Flat Array
+          {{ t('input.samples.flat') }}
         </AppButton>
         <AppButton size="sm" variant="secondary" @click="loadExample('nested')">
-          Nested
+          {{ t('input.samples.nested') }}
         </AppButton>
         <AppButton size="sm" variant="secondary" @click="loadExample('apiWrap')">
-          API Wrap
+          {{ t('input.samples.api') }}
         </AppButton>
         <AppButton size="sm" variant="secondary" @click="loadExample('jsonLines')">
-          JSON Lines
+          {{ t('input.samples.jsonl') }}
         </AppButton>
       </div>
     </div>

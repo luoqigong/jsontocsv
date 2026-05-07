@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useColumnsStore } from '@/stores/columns'
 import type { ColumnMeta } from '@/types'
 import AppButton from '@/components/common/AppButton.vue'
 import AppSelect from '@/components/common/AppSelect.vue'
+
+const { t } = useI18n()
 
 const columnsStore = useColumnsStore()
 
@@ -53,10 +56,10 @@ function handleTypeChange(key: string, newType: string) {
   <div class="min-w-0 flex flex-col gap-4">
     <div class="flex items-center justify-between">
       <h3 class="text-sm font-semibold text-slate-900 dark:text-white">
-        列管理
+        {{ t('columns.title') }}
       </h3>
       <AppButton variant="secondary" size="sm" @click="columnsStore.resetOverrides">
-        重置
+        {{ t('columns.reset') }}
       </AppButton>
     </div>
 

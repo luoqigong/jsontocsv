@@ -7,7 +7,7 @@ import AppSelect from './components/common/AppSelect.vue'
 import CookieBanner from './components/CookieBanner.vue'
 
 const { isDark, toggle } = useDarkMode()
-const { locale } = useI18n()
+const { t, locale } = useI18n()
 
 const LOCALE_KEY = 'j2t-locale'
 
@@ -51,7 +51,7 @@ onMounted(() => {
                   JSON to Table
                 </p>
                 <p class="truncate text-xs text-gray-500 transition-colors group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-400">
-                  Browser-first JSON workspace for clean table exports
+                  {{ t('app.tagline') }}
                 </p>
               </div>
             </div>
@@ -85,7 +85,7 @@ onMounted(() => {
               JSON to Table
             </p>
             <p class="text-xs text-gray-500 dark:text-gray-400">
-              Free JSON to Excel &amp; CSV converter with private, client-side processing.
+              {{ t('app.footerDesc') }}
             </p>
           </div>
 

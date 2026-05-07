@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import JsonInput from '@/components/input/JsonInput.vue'
 import PathSelector from '@/components/PathSelector.vue'
 import NestingPanel from '@/components/NestingPanel.vue'
@@ -8,6 +9,16 @@ import FilterBar from '@/components/FilterBar.vue'
 import ExportPanel from '@/components/ExportPanel.vue'
 import { usePageMeta } from '@/composables/usePageMeta'
 import { useSchema } from '@/composables/useSchema'
+
+const { t } = useI18n()
+
+const faqExamples = {
+  nested: '{"user": {"name": "Alice"}}',
+  column: 'user.name',
+  standardArray: '[{"id": 1, "name": "Alice"}, ...]',
+  apiPath: 'data.list',
+  apiWrapped: '{"code": 200, "data": {"list": [...]}}',
+}
 
 usePageMeta({
   title: 'JSON to Table: Convert JSON to Excel & CSV Online — Free Browser Tool',
@@ -50,48 +61,48 @@ useSchema({
           <div class="flex flex-wrap items-center gap-3 text-sm">
             <span class="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1 font-medium text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">
               <span class="h-2 w-2 rounded-full bg-emerald-500" />
-              100% Client-Side
+              {{ t('home.clientSide') }}
             </span>
             <span class="inline-flex items-center rounded-full border border-primary-200 bg-primary-50 px-3 py-1 font-medium text-primary-700 dark:border-primary-800/70 dark:bg-primary-950/60 dark:text-primary-300">
-              Excel / CSV Export
+              {{ t('home.excelCsvExport') }}
             </span>
             <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 font-medium text-slate-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300">
-              Nested JSON Ready
+              {{ t('home.nestedJsonReady') }}
             </span>
           </div>
 
           <div class="space-y-4">
             <h1 class="max-w-4xl text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl dark:text-white">
-              JSON to Table: Convert JSON to Excel &amp; CSV Online
+              {{ t('home.title') }}
             </h1>
             <p class="max-w-3xl text-base leading-7 text-slate-600 sm:text-lg dark:text-gray-300">
-              Paste JSON, preview structured rows instantly, fine-tune columns and filters, then export polished Excel or CSV files without sending your data anywhere.
+              {{ t('home.description') }}
             </p>
           </div>
 
           <div class="grid gap-3 sm:grid-cols-3">
             <div class="rounded-2xl border border-slate-200 bg-slate-50/85 p-4 dark:border-gray-800 dark:bg-gray-950/70">
               <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 dark:text-gray-500">
-                Workflow
+                {{ t('home.workflow') }}
               </p>
               <p class="mt-2 text-sm font-medium text-slate-900 dark:text-white">
-                Paste, configure, export in one screen
+                {{ t('home.workflowDesc') }}
               </p>
             </div>
             <div class="rounded-2xl border border-slate-200 bg-slate-50/85 p-4 dark:border-gray-800 dark:bg-gray-950/70">
               <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 dark:text-gray-500">
-                Privacy
+                {{ t('home.privacy') }}
               </p>
               <p class="mt-2 text-sm font-medium text-slate-900 dark:text-white">
-                Data stays inside your browser session
+                {{ t('home.privacyDesc') }}
               </p>
             </div>
             <div class="rounded-2xl border border-slate-200 bg-slate-50/85 p-4 dark:border-gray-800 dark:bg-gray-950/70">
               <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 dark:text-gray-500">
-                Structure
+                {{ t('home.structure') }}
               </p>
               <p class="mt-2 text-sm font-medium text-slate-900 dark:text-white">
-                Handles flat, wrapped, nested, and JSONL input
+                {{ t('home.structureDesc') }}
               </p>
             </div>
           </div>
@@ -100,24 +111,24 @@ useSchema({
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
           <div class="rounded-2xl border border-slate-200 bg-slate-50/90 p-5 dark:border-gray-800 dark:bg-gray-950/70">
             <p class="text-sm font-semibold text-slate-900 dark:text-white">
-              Fast local workspace
+              {{ t('home.fastWorkspace') }}
             </p>
             <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-gray-300">
-              Built for large everyday API payloads with path detection, nested strategies, editable columns, and filterable preview tables.
+              {{ t('home.fastWorkspaceDesc') }}
             </p>
           </div>
           <div class="rounded-2xl border border-slate-200 bg-gradient-to-br from-primary-600 to-blue-700 p-5 text-white shadow-lg shadow-primary-600/20 dark:border-primary-700/40">
             <p class="text-sm font-semibold">
-              Need the full privacy details?
+              {{ t('home.privacyDetailsTitle') }}
             </p>
             <p class="mt-2 text-sm leading-6 text-white/85">
-              Every transformation runs in-browser. No upload pipeline, no server processing.
+              {{ t('home.privacyDetailsDesc') }}
             </p>
             <RouterLink
               to="/privacy"
               class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white transition-opacity hover:opacity-85"
             >
-              Read Privacy Policy
+              {{ t('home.readPrivacy') }}
               <span aria-hidden="true">→</span>
             </RouterLink>
           </div>
@@ -132,14 +143,14 @@ useSchema({
             <div class="mb-4 flex items-start justify-between gap-4">
               <div>
                 <p class="text-sm font-semibold text-slate-900 dark:text-white">
-                  Data Input
+                  {{ t('home.dataInput') }}
                 </p>
                 <p class="mt-1 text-sm text-slate-500 dark:text-gray-400">
-                  Paste raw JSON, load an example, or drop a local file.
+                  {{ t('home.dataInputDesc') }}
                 </p>
               </div>
               <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-gray-800 dark:text-gray-300">
-                Step 1
+                {{ t('home.step', { n: 1 }) }}
               </span>
             </div>
             <JsonInput />
@@ -149,14 +160,14 @@ useSchema({
             <div class="mb-4 flex items-start justify-between gap-4">
               <div>
                 <p class="text-sm font-semibold text-slate-900 dark:text-white">
-                  Structure Setup
+                  {{ t('home.structureSetup') }}
                 </p>
                 <p class="mt-1 text-sm text-slate-500 dark:text-gray-400">
-                  Choose the array path and define how nested data should expand.
+                  {{ t('home.structureSetupDesc') }}
                 </p>
               </div>
               <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-gray-800 dark:text-gray-300">
-                Step 2
+                {{ t('home.step', { n: 2 }) }}
               </span>
             </div>
             <div class="grid gap-4">
@@ -171,14 +182,14 @@ useSchema({
             <div class="flex items-center justify-between gap-4">
               <div>
                 <p class="text-sm font-semibold text-slate-900 dark:text-white">
-                  Preview &amp; Filters
+                  {{ t('home.previewFilters') }}
                 </p>
                 <p class="mt-1 text-sm text-slate-500 dark:text-gray-400">
-                  Search, refine, and inspect the resulting table before export.
+                  {{ t('home.previewFiltersDesc') }}
                 </p>
               </div>
               <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-gray-800 dark:text-gray-300">
-                Step 3
+                {{ t('home.step', { n: 3 }) }}
               </span>
             </div>
             <FilterBar />
@@ -195,14 +206,14 @@ useSchema({
           <div class="mb-4 flex items-start justify-between gap-4">
             <div>
               <p class="text-sm font-semibold text-slate-900 dark:text-white">
-                Column Manager
+                {{ t('home.columnManager') }}
               </p>
               <p class="mt-1 text-sm text-slate-500 dark:text-gray-400">
-                Rename, show or hide columns, and adjust detected data types.
+                {{ t('home.columnManagerDesc') }}
               </p>
             </div>
             <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-gray-800 dark:text-gray-300">
-              Step 4
+              {{ t('home.step', { n: 4 }) }}
             </span>
           </div>
           <ColumnPanel />
@@ -212,14 +223,14 @@ useSchema({
           <div class="mb-4 flex items-start justify-between gap-4">
             <div>
               <p class="text-sm font-semibold text-slate-900 dark:text-white">
-                Export Studio
+                {{ t('home.exportStudio') }}
               </p>
               <p class="mt-1 text-sm text-slate-500 dark:text-gray-400">
-                Finalize CSV options or export a styled Excel workbook.
+                {{ t('home.exportStudioDesc') }}
               </p>
             </div>
             <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-gray-800 dark:text-gray-300">
-              Step 5
+              {{ t('home.step', { n: 5 }) }}
             </span>
           </div>
           <ExportPanel />
@@ -231,10 +242,10 @@ useSchema({
       <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-left">
         <div>
           <p class="text-sm font-semibold text-slate-900 dark:text-white">
-            How It Works &amp; FAQ
+            {{ t('home.faqTitle') }}
           </p>
           <p class="mt-1 text-sm text-slate-500 dark:text-gray-400">
-            Understand the supported input structures, nested handling, and export options.
+            {{ t('home.faqDesc') }}
           </p>
         </div>
         <span class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-500 transition-transform duration-200 group-open:rotate-180 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300">
@@ -246,26 +257,26 @@ useSchema({
         <section class="grid gap-4 md:grid-cols-3">
           <div class="rounded-2xl border border-slate-200 bg-slate-50/85 p-5 dark:border-gray-800 dark:bg-gray-950/70">
             <h2 class="text-base font-semibold text-slate-900 dark:text-white">
-              Step 1: Paste or Upload Your JSON Data
+              {{ t('home.faqStep1Title') }}
             </h2>
             <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-gray-300">
-              Paste JSON directly into the text area, or use JSON Lines (JSONL). The tool accepts arrays, nested objects, and API-wrapped responses.
+              {{ t('home.faqStep1Desc') }}
             </p>
           </div>
           <div class="rounded-2xl border border-slate-200 bg-slate-50/85 p-5 dark:border-gray-800 dark:bg-gray-950/70">
             <h2 class="text-base font-semibold text-slate-900 dark:text-white">
-              Step 2: Configure Columns and Filters
+              {{ t('home.faqStep2Title') }}
             </h2>
             <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-gray-300">
-              Rename columns, reorder their meaning through type selection, hide unused fields, and add filter conditions to focus on matching rows.
+              {{ t('home.faqStep2Desc') }}
             </p>
           </div>
           <div class="rounded-2xl border border-slate-200 bg-slate-50/85 p-5 dark:border-gray-800 dark:bg-gray-950/70">
             <h2 class="text-base font-semibold text-slate-900 dark:text-white">
-              Step 3: Download Excel or CSV File
+              {{ t('home.faqStep3Title') }}
             </h2>
             <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-gray-300">
-              Export styled Excel files with formatting or generate CSV output with your preferred delimiter, header behavior, and BOM settings.
+              {{ t('home.faqStep3Desc') }}
             </p>
           </div>
         </section>
@@ -274,26 +285,24 @@ useSchema({
           <section class="space-y-4">
             <div>
               <h2 class="text-lg font-bold text-slate-900 dark:text-white">
-                Convert Nested JSON to Excel Without Coding
+                {{ t('home.faqNestedTitle') }}
               </h2>
               <p class="mt-2 break-words text-sm leading-6 text-slate-600 dark:text-gray-300">
-                Objects like <code class="rounded bg-slate-100 px-1.5 py-0.5 break-all dark:bg-gray-800">{"user": {"name": "Alice"}}</code> become columns <code class="rounded bg-slate-100 px-1.5 py-0.5 break-all dark:bg-gray-800">user.name</code> automatically. No manual transformation needed.
+                {{ t('home.faqNestedDesc', { example: faqExamples.nested, column: faqExamples.column }) }}
               </p>
             </div>
             <div class="rounded-2xl border border-slate-200 bg-slate-50/85 p-5 dark:border-gray-800 dark:bg-gray-950/70">
               <h3 class="text-sm font-semibold text-slate-900 dark:text-white">
-                Handle Array Fields with 4 Built-In Strategies
+                {{ t('home.faqStrategiesTitle') }}
               </h3>
-              <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-gray-300">
-                Choose <strong>Flatten</strong>, <strong>Stringify</strong>, <strong>Explode</strong>, or <strong>Multi-Sheet</strong> depending on whether you want dot-notation columns, JSON text, extra rows, or separate worksheets.
-              </p>
+              <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-gray-300" v-html="t('home.faqStrategiesDesc')" />
             </div>
             <div class="rounded-2xl border border-slate-200 bg-slate-50/85 p-5 dark:border-gray-800 dark:bg-gray-950/70">
               <h3 class="text-sm font-semibold text-slate-900 dark:text-white">
-                JSON to CSV: Custom Delimiters and UTF-8 BOM
+                {{ t('home.faqCsvTitle') }}
               </h3>
               <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-gray-300">
-                Export CSV with comma, semicolon, tab, or pipe delimiters. Include headers, enable UTF-8 BOM for Excel on Windows, and export only filtered rows when needed.
+                {{ t('home.faqCsvDesc') }}
               </p>
             </div>
           </section>
@@ -301,44 +310,44 @@ useSchema({
           <section class="space-y-4">
             <div class="rounded-2xl border border-primary-200 bg-primary-50/85 p-5 dark:border-primary-800/60 dark:bg-primary-950/40">
               <h2 class="text-lg font-bold text-slate-900 dark:text-white">
-                Is My JSON Data Safe?
+                {{ t('home.faqSafeTitle') }}
               </h2>
               <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-gray-300">
-                All parsing, transformation, filtering, and export operations happen inside your browser. Your JSON data is never uploaded to a server or stored remotely.
+                {{ t('home.faqSafeDesc') }}
               </p>
               <RouterLink to="/privacy" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary-700 hover:underline dark:text-primary-300">
-                Read the Privacy Policy
+                {{ t('home.faqReadPrivacy') }}
                 <span aria-hidden="true">→</span>
               </RouterLink>
             </div>
 
             <div class="rounded-2xl border border-slate-200 bg-slate-50/85 p-5 dark:border-gray-800 dark:bg-gray-950/70">
               <h2 class="text-lg font-bold text-slate-900 dark:text-white">
-                What JSON Formats Are Supported?
+                {{ t('home.faqFormatsTitle') }}
               </h2>
               <div class="mt-4 space-y-4">
                 <div>
                   <h3 class="text-sm font-semibold text-slate-900 dark:text-white">
-                    Standard JSON Arrays
+                    {{ t('home.faqStandardArrays') }}
                   </h3>
                   <p class="mt-1 break-words text-sm leading-6 text-slate-600 dark:text-gray-300">
-                    Arrays of objects with flat or nested properties, such as <code class="rounded bg-slate-100 px-1.5 py-0.5 break-all dark:bg-gray-800">[{"id": 1, "name": "Alice"}, ...]</code>.
+                    {{ t('home.faqStandardArraysDesc', { example: faqExamples.standardArray }) }}
                   </p>
                 </div>
                 <div>
                   <h3 class="text-sm font-semibold text-slate-900 dark:text-white">
-                    API Response Wrappers
+                    {{ t('home.faqApiWrappers') }}
                   </h3>
                   <p class="mt-1 break-words text-sm leading-6 text-slate-600 dark:text-gray-300">
-                    The tool detects paths such as <code class="rounded bg-slate-100 px-1.5 py-0.5 break-all dark:bg-gray-800">data.list</code> from wrapped payloads like <code class="rounded bg-slate-100 px-1.5 py-0.5 break-all dark:bg-gray-800">{"code": 200, "data": {"list": [...]}}</code>.
+                    {{ t('home.faqApiWrappersDesc', { path: faqExamples.apiPath, wrapped: faqExamples.apiWrapped }) }}
                   </p>
                 </div>
                 <div>
                   <h3 class="text-sm font-semibold text-slate-900 dark:text-white">
-                    JSON Lines (JSONL)
+                    {{ t('home.faqJsonl') }}
                   </h3>
                   <p class="mt-1 text-sm leading-6 text-slate-600 dark:text-gray-300">
-                    One JSON object per line for logs or streams. JSONL is detected automatically and normalized into a table.
+                    {{ t('home.faqJsonlDesc') }}
                   </p>
                 </div>
               </div>
