@@ -30,11 +30,21 @@ export const router = createRouter({
   },
 })
 
+function trackPageView(path: string) {
+  if (typeof window.gtag !== 'function') return false
+  window.gtag('config', 'G-42LXEJW456', {
+    page_path: path,
+    page_location: window.location.origin + path,
+  })
+  return true
+}
+
 router.afterEach((to) => {
-  if (typeof window.gtag === 'function') {
-    window.gtag('config', 'G-42LXEJW456', {
-      page_path: to.fullPath,
-      page_location: window.location.origin + to.fullPath,
-    })
+  const path = to.fullPath
+  if (!trackPageView(path)) {
+    const timer = setInterval(() => {
+      if (trackPageView(path)) clearInterval(timer)
+    }, 100)
+    setTimeout(() => clearInterval(timer), 3000)
   }
 })

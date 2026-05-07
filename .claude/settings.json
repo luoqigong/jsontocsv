@@ -54,7 +54,11 @@
       "Bash(grep -oE \".{0,80}\\\\b11\\\\b.{0,120}\" index-BE7rRhC4.js)",
       "Bash(grep -oE \".{0,120}MUST_HAVE_MESSAGES_IN_PLURAL.{0,120}\" index-BE7rRhC4.js)",
       "Bash(grep -oE \".{0,100}\\\\[as parse\\\\].{0,100}\" index-BE7rRhC4.js)",
-      "Bash(cd \"d:/小项目/manytools/json转表格/dist/assets\" && rm -f About-BIl7HIvO.js Contact-D8fkjF6f.js CookiePolicy-CummcgpK.js Home-CfApXXf0.js NotFound-BsRa1cT9.js Privacy-B-oQ2528.js Terms-BwUjWG-t.js index-BE7rRhC4.js useSchema-CqVULnKk.js *.js.map)"
+      "Bash(cd \"d:/小项目/manytools/json转表格/dist/assets\" && rm -f About-BIl7HIvO.js Contact-D8fkjF6f.js CookiePolicy-CummcgpK.js Home-CfApXXf0.js NotFound-BsRa1cT9.js Privacy-B-oQ2528.js Terms-BwUjWG-t.js index-BE7rRhC4.js useSchema-CqVULnKk.js *.js.map)",
+      "Bash(awk '{print $6,$7,$8,$9}')",
+      "Bash(curl -s \"https://jsontocsv.manytools.cc\")",
+      "Bash(curl -sI \"https://jsontocsv.manytools.cc\")",
+      "Bash(curl -sI \"https://www.googletagmanager.com/gtag/js?id=G-42LXEJW456\")"
     ],
     "additionalDirectories": [
       "D:\\小项目\\manytools\\json转表格\\src\\stores\\__tests__",
