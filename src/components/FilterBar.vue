@@ -56,28 +56,30 @@ function updateConditionValue(index: number, value: string) {
 </script>
 
 <template>
-  <div class="flex flex-col gap-3">
-    <div class="flex items-center gap-2">
+  <div class="min-w-0 flex flex-col gap-4">
+    <div class="min-w-0 flex flex-col gap-3 lg:flex-row lg:items-center">
       <input
         :value="filtersStore.globalSearch"
         type="text"
         placeholder="全局搜索..."
-        class="flex-1 rounded border border-gray-300 bg-white px-3 py-1.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500"
+        class="min-w-0 flex-1 rounded-xl border border-slate-200 bg-slate-50/80 px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition-all focus:border-primary-400 focus:bg-white focus:ring-4 focus:ring-primary-100 dark:border-gray-700 dark:bg-gray-950/70 dark:text-gray-100 dark:placeholder-gray-500 dark:focus:border-primary-500 dark:focus:ring-primary-900/30"
         @input="filtersStore.setGlobalSearch(($event.target as HTMLInputElement).value)"
       >
-      <AppButton variant="secondary" size="sm" @click="filtersStore.clearFilters">
-        清除
-      </AppButton>
-      <AppBadge variant="default">
-        {{ filtersStore.filteredCount }} / {{ filtersStore.totalCount }} rows
-      </AppBadge>
+      <div class="min-w-0 flex flex-wrap items-center gap-2">
+        <AppButton variant="secondary" size="sm" @click="filtersStore.clearFilters">
+          清除
+        </AppButton>
+        <AppBadge variant="default">
+          {{ filtersStore.filteredCount }} / {{ filtersStore.totalCount }} rows
+        </AppBadge>
+      </div>
     </div>
 
-    <div class="flex flex-col gap-2">
+    <div v-if="filtersStore.conditions.length > 0" class="min-w-0 flex flex-col gap-3">
       <div
         v-for="(condition, index) in filtersStore.conditions"
         :key="index"
-        class="flex items-center gap-2"
+        class="min-w-0 flex flex-wrap items-center gap-2 rounded-2xl border border-slate-200 bg-slate-50/85 p-3 dark:border-gray-800 dark:bg-gray-950/70 xl:flex-nowrap"
       >
         <AppSelect
           :model-value="condition.column"
@@ -95,7 +97,7 @@ function updateConditionValue(index: number, value: string) {
           :value="condition.value"
           type="text"
           placeholder="值"
-          class="flex-1 rounded border border-gray-300 bg-white px-3 py-1.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500"
+          class="min-w-0 flex-1 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 outline-none transition-all focus:border-primary-400 focus:ring-4 focus:ring-primary-100 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500 dark:focus:border-primary-500 dark:focus:ring-primary-900/30"
           @input="updateConditionValue(index, ($event.target as HTMLInputElement).value)"
         >
 
@@ -105,7 +107,10 @@ function updateConditionValue(index: number, value: string) {
       </div>
     </div>
 
-    <div>
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <p class="text-xs text-slate-500 dark:text-gray-400">
+        可叠加多个条件，对当前可见数据做精细筛选。
+      </p>
       <AppButton variant="secondary" size="sm" @click="addCondition">
         添加条件
       </AppButton>

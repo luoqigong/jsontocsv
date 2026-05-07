@@ -8,17 +8,17 @@ withDefaults(defineProps<Props>(), {
 })
 
 const variantClasses = {
-  default: 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300',
-  success: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300',
-  warning: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300',
-  error: 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300',
+  default: 'border border-slate-200 bg-slate-50 text-slate-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300',
+  success: 'border border-green-200 bg-green-50 text-green-700 dark:border-green-900 dark:bg-green-900/40 dark:text-green-300',
+  warning: 'border border-yellow-200 bg-yellow-50 text-yellow-700 dark:border-yellow-900 dark:bg-yellow-900/40 dark:text-yellow-300',
+  error: 'border border-red-200 bg-red-50 text-red-700 dark:border-red-900 dark:bg-red-900/40 dark:text-red-300',
 }
 </script>
 
 <template>
   <span
     :class="[
-      'inline-flex items-center rounded px-2 py-0.5 text-xs font-medium',
+      'inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium',
       variantClasses[variant],
     ]"
   >

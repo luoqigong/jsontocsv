@@ -58,61 +58,75 @@ function onFileLoaded(content: string) {
 </script>
 
 <template>
-  <div class="flex flex-col gap-3">
-    <!-- Tabs -->
-    <div class="flex gap-1 rounded-lg bg-gray-100 p-1 dark:bg-gray-800">
+  <div class="min-w-0 flex flex-col gap-4">
+    <div class="min-w-0 flex gap-1 rounded-2xl border border-slate-200 bg-slate-100/90 p-1 dark:border-gray-700 dark:bg-gray-800/90">
       <button
-        class="flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition-colors cursor-pointer"
+        class="flex-1 cursor-pointer rounded-xl px-3 py-2 text-sm font-medium transition-all"
         :class="activeTab === 'paste'
-          ? 'bg-white text-gray-900 shadow-sm dark:bg-gray-700 dark:text-gray-100'
-          : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'"
+          ? 'bg-white text-slate-900 shadow-sm ring-1 ring-slate-200 dark:bg-gray-700 dark:text-gray-100 dark:ring-gray-600'
+          : 'text-slate-500 hover:text-slate-700 dark:text-gray-400 dark:hover:text-gray-200'"
         @click="activeTab = 'paste'"
       >
         粘贴 / Paste
       </button>
       <button
-        class="flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition-colors cursor-pointer"
+        class="flex-1 cursor-pointer rounded-xl px-3 py-2 text-sm font-medium transition-all"
         :class="activeTab === 'upload'
-          ? 'bg-white text-gray-900 shadow-sm dark:bg-gray-700 dark:text-gray-100'
-          : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'"
+          ? 'bg-white text-slate-900 shadow-sm ring-1 ring-slate-200 dark:bg-gray-700 dark:text-gray-100 dark:ring-gray-600'
+          : 'text-slate-500 hover:text-slate-700 dark:text-gray-400 dark:hover:text-gray-200'"
         @click="activeTab = 'upload'"
       >
         上传文件 / Upload
       </button>
     </div>
 
-    <!-- Paste Tab -->
-    <div v-if="activeTab === 'paste'" class="flex flex-col gap-2">
+    <div v-if="activeTab === 'paste'" class="min-w-0 flex flex-col gap-3">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <p class="text-xs font-medium uppercase tracking-[0.18em] text-slate-400 dark:text-gray-500">
+          Raw Input
+        </p>
+        <p class="text-xs text-slate-500 dark:text-gray-400">
+          Supports JSON arrays, wrapped payloads, and JSONL
+        </p>
+      </div>
       <textarea
         :value="dataStore.rawInput"
-        class="h-64 w-full rounded-lg border border-gray-300 bg-white p-3 font-mono text-sm text-gray-900 focus:border-primary-500 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
+        class="box-border h-72 max-w-full w-full min-w-0 rounded-[1.25rem] border border-slate-200 bg-slate-50/80 p-4 font-mono text-sm leading-6 text-slate-900 shadow-inner outline-none transition-all focus:border-primary-400 focus:bg-white focus:ring-4 focus:ring-primary-100 dark:border-gray-700 dark:bg-gray-950/80 dark:text-gray-100 dark:focus:border-primary-500 dark:focus:ring-primary-900/30"
         placeholder="在此粘贴 JSON 数据... / Paste JSON data here..."
         @input="onTextareaInput"
       />
-      <p v-if="dataStore.parseError" class="text-sm text-red-500">
+      <p v-if="dataStore.parseError" class="rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-600 dark:border-red-900/60 dark:bg-red-950/40 dark:text-red-300">
         {{ dataStore.parseError }}
       </p>
     </div>
 
-    <!-- Upload Tab -->
     <div v-else>
       <FileUploader @load="onFileLoaded" />
     </div>
 
-    <!-- Examples -->
-    <div class="flex flex-wrap gap-2">
-      <AppButton size="sm" variant="secondary" @click="loadExample('flatArray')">
-        Flat Array
-      </AppButton>
-      <AppButton size="sm" variant="secondary" @click="loadExample('nested')">
-        Nested
-      </AppButton>
-      <AppButton size="sm" variant="secondary" @click="loadExample('apiWrap')">
-        API Wrap
-      </AppButton>
-      <AppButton size="sm" variant="secondary" @click="loadExample('jsonLines')">
-        JSON Lines
-      </AppButton>
+    <div class="space-y-3">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <p class="text-xs font-medium uppercase tracking-[0.18em] text-slate-400 dark:text-gray-500">
+          Quick Examples
+        </p>
+        <p class="text-xs text-slate-500 dark:text-gray-400">
+          Load sample payloads without changing any tool logic
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <AppButton size="sm" variant="secondary" @click="loadExample('flatArray')">
+          Flat Array
+        </AppButton>
+        <AppButton size="sm" variant="secondary" @click="loadExample('nested')">
+          Nested
+        </AppButton>
+        <AppButton size="sm" variant="secondary" @click="loadExample('apiWrap')">
+          API Wrap
+        </AppButton>
+        <AppButton size="sm" variant="secondary" @click="loadExample('jsonLines')">
+          JSON Lines
+        </AppButton>
+      </div>
     </div>
   </div>
 </template>

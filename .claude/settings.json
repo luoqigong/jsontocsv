@@ -37,7 +37,16 @@
       "Bash(agent-browser click *)",
       "Bash(agent-browser close *)",
       "Bash(git remote *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Read(//c/Users/luo/.agent-browser/tmp/screenshots/**)",
+      "Bash(agent-browser scroll *)",
+      "Bash(agent-browser eval *)",
+      "Bash(lsof -i:5173)",
+      "Bash(find /c/Users/luo/AppData/Local/Temp/claude -name \"*.png\" -mmin -5 2>/dev/null | head -10)",
+      "Read(//c/Users/luo/AppData/Local/Temp/claude/**)",
+      "Bash(ls -la /tmp/screenshot-top.png 2>/dev/null || echo \"File not found\")",
+      "Read(//tmp/**)",
+      "Bash(npx playwright *)"
     ],
     "additionalDirectories": [
       "D:\\小项目\\manytools\\json转表格\\src\\stores\\__tests__"

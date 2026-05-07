@@ -59,43 +59,42 @@ async function exportExcel() {
 </script>
 
 <template>
-  <div class="flex flex-col gap-4">
-    <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-100">
-      导出设置
-    </h3>
+  <div class="min-w-0 flex flex-col gap-4">
+    <div class="min-w-0 rounded-[1.5rem] border border-slate-200 bg-slate-50/85 p-4 dark:border-gray-800 dark:bg-gray-950/70">
+      <p class="text-xs font-medium uppercase tracking-[0.18em] text-slate-400 dark:text-gray-500">
+        CSV Options
+      </p>
+      <div class="mt-4 grid gap-4">
+        <AppSelect
+          :model-value="csvOptions.delimiter"
+          label="分隔符"
+          :options="delimiterOptions"
+          @update:model-value="csvOptions = { ...csvOptions, delimiter: $event as ExportOptions['delimiter'] }"
+        />
 
-    <div class="flex flex-col gap-3 rounded border border-gray-300 p-3 dark:border-gray-700">
-      <h4 class="text-xs font-medium text-gray-600 dark:text-gray-400">
-        CSV 选项
-      </h4>
+        <div class="grid gap-3">
+          <AppToggle
+            :model-value="csvOptions.includeBom"
+            label="包含 UTF-8 BOM"
+            @update:model-value="csvOptions = { ...csvOptions, includeBom: $event }"
+          />
 
-      <AppSelect
-        :model-value="csvOptions.delimiter"
-        label="分隔符"
-        :options="delimiterOptions"
-        @update:model-value="csvOptions = { ...csvOptions, delimiter: $event as ExportOptions['delimiter'] }"
-      />
+          <AppToggle
+            :model-value="csvOptions.includeHeader"
+            label="包含表头"
+            @update:model-value="csvOptions = { ...csvOptions, includeHeader: $event }"
+          />
 
-      <AppToggle
-        :model-value="csvOptions.includeBom"
-        label="包含 UTF-8 BOM"
-        @update:model-value="csvOptions = { ...csvOptions, includeBom: $event }"
-      />
-
-      <AppToggle
-        :model-value="csvOptions.includeHeader"
-        label="包含表头"
-        @update:model-value="csvOptions = { ...csvOptions, includeHeader: $event }"
-      />
-
-      <AppToggle
-        :model-value="csvOptions.filteredOnly"
-        label="仅导出过滤后的行"
-        @update:model-value="csvOptions = { ...csvOptions, filteredOnly: $event }"
-      />
+          <AppToggle
+            :model-value="csvOptions.filteredOnly"
+            label="仅导出过滤后的行"
+            @update:model-value="csvOptions = { ...csvOptions, filteredOnly: $event }"
+          />
+        </div>
+      </div>
     </div>
 
-    <div class="flex gap-2">
+    <div class="grid gap-2 sm:grid-cols-2">
       <AppButton variant="primary" @click="exportCsv">
         导出 CSV
       </AppButton>
